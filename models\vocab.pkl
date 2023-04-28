@@ -1,0 +1,13 @@
+ python
+import pickle
+import os
+
+# Define the data to save in the file
+vocab = ["word1", "word2", "word3"]
+
+# Save the data to a pkl file
+filename = "vocab.pkl"
+filepath = os.path.join("models", filename)
+
+with open(filepath, "wb") as f:
+    pickle.dump(vocab, f)
