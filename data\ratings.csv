@@ -1,0 +1,20 @@
+
+import csv
+
+# Sample data to write to csv file
+data = [
+    {'user_id': 1, 'product_id': 23, 'rating': 4},
+    {'user_id': 2, 'product_id': 46, 'rating': 5},
+    {'user_id': 3, 'product_id': 78, 'rating': 3},
+    {'user_id': 1, 'product_id': 12, 'rating': 2},
+    {'user_id': 2, 'product_id': 23, 'rating': 5},
+]
+
+# Write data to csv file
+with open('data/ratings.csv', mode='w') as csv_file:
+    fieldnames = ['user_id', 'product_id', 'rating']
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+    writer.writeheader()
+    for row in data:
+        writer.writerow(row)
