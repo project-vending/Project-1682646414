@@ -1,0 +1,14 @@
+python
+from sklearn.linear_model import LinearRegression
+import pickle
+
+# Train model
+X = [[1], [2], [3], [4], [5]]
+y = [2, 4, 6, 8, 10]
+
+model = LinearRegression()
+model.fit(X, y)
+
+# Serialize model to pickle file
+with open('models/model.pkl', 'wb') as f:
+    pickle.dump(model, f)
