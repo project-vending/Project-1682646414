@@ -1,0 +1,15 @@
+python
+import csv
+
+# Define column names and sample data
+fieldnames = ['user_id', 'name', 'age', 'gender']
+data = [{'user_id': 1, 'name': 'John', 'age': 30, 'gender': 'Male'},
+        {'user_id': 2, 'name': 'Jane', 'age': 25, 'gender': 'Female'},
+        {'user_id': 3, 'name': 'Bob', 'age': 35, 'gender': 'Male'}]
+
+# Write data to users.csv file
+with open('data/users.csv', 'w', newline='') as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    for d in data:
+        writer.writerow(d)
