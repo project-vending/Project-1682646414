@@ -1,0 +1,14 @@
+python
+import csv
+import os
+
+# Define the file path and name
+file_path = os.path.join('data', 'products.csv')
+
+# Define the header row (if needed)
+header = ['product_id', 'product_name', 'description', 'price']
+
+# Create the file and write the header row (if needed)
+with open(file_path, 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(header)
